@@ -71,3 +71,4 @@ Write-Host "  已安装依赖:" -ForegroundColor Cyan
 Write-Host "    [必需] codex-claude-legal-cn-core-codices — 162部法律全文JSON" -ForegroundColor White
 Write-Host "    [必需] codex-claude-legal-cn-mcp-hub    — MCP连接器(类案检索/法条核验)" -ForegroundColor White
 Write-Host "========================================" -ForegroundColor Green
+
