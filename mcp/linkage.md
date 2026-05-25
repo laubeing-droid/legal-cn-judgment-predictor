@@ -1,4 +1,10 @@
-﻿# MCP Hub 联动
+﻿<!--
+version: 1.0.0
+module: judgment-predictor
+status: active
+-->
+
+# MCP Hub 联动
 
 ## 总体架构
 

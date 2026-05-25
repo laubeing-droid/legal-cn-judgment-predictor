@@ -1,4 +1,10 @@
-﻿# 引用来源
+﻿<!--
+version: 1.0.0
+module: judgment-predictor
+status: active
+-->
+
+# 引用来源
 
 本框架设计参考了以下开源项目，特此致谢。
 

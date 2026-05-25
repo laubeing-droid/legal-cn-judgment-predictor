@@ -1,4 +1,10 @@
-﻿# 刑事判决预测
+﻿<!--
+version: 1.0.0
+module: judgment-predictor
+status: active
+-->
+
+# 刑事判决预测
 
 ## 预测维度
 

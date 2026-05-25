@@ -1,4 +1,10 @@
-﻿# 快速开始
+﻿<!--
+version: 1.0.0
+module: docs
+status: active
+-->
+
+# 快速开始
 
 ## 前提
 

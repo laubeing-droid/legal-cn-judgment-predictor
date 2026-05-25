@@ -1,4 +1,10 @@
-﻿# 结构化预测报告模板
+﻿<!--
+version: 1.0.0
+module: judgment-predictor
+status: active
+-->
+
+# 结构化预测报告模板
 
 ## 输出格式
 

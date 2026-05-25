@@ -1,4 +1,10 @@
-﻿# Codex-Legal-CN-Judgment-Predictor
+﻿<!--
+version: 1.0.0
+module: judgment-predictor
+status: active
+-->
+
+# Codex-Legal-CN-Judgment-Predictor
 
 > 中国法裁判预测框架 — 输入案件事实，输出结构化判决预测报告
 

@@ -1,4 +1,10 @@
-﻿# 架构设计
+﻿<!--
+version: 1.0.0
+module: docs
+status: active
+-->
+
+# 架构设计
 
 ## 设计哲学
 

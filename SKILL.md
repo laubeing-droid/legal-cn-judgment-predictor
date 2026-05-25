@@ -5,6 +5,9 @@ description: >
   金额/刑期区间 + 置信度 + 推理链 + 自评）。基于三角色对抗辩论（原告/被告 → 法官综合裁决）。
   支持民事/刑事/行政三类案由。
 argument-hint: '[案由] [案件事实描述]'
+version: 1.0.0
+module: judgment-predictor
+status: active
 ---
 
 # 裁判预测框架
