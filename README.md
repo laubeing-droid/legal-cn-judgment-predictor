@@ -141,6 +141,16 @@ status: active
 
 ---
 
+
+## 配套项目
+
+| 仓库 | 说明 |
+|------|------|
+| [core-codices](https://github.com/laubeing-droid/codex-claude-legal-cn-core-codices) | 法律数据库 — 162 部法律全文 JSON，本框架法条要件来源 |
+| [codex-claude-legal-cn-main](https://github.com/laubeing-droid/codex-claude-legal-cn-main) | 法律技能集 — 150+ 子技能 |
+| [mcp-hub](https://github.com/laubeing-droid/codex-claude-legal-cn-mcp-hub) | MCP 连接器 — 类案检索与法条核验 |
+| [alignment-framework](https://github.com/laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework) | 中美法律语义对齐 — 阻断美式概念污染判决推理 |
+
 ## 许可证
 
 MIT
