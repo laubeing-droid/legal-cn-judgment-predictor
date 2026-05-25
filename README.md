@@ -1,5 +1,5 @@
-<!--
-version: 1.0.2
+﻿<!--
+version: 1.1.0
 module: judgment-predictor
 status: active
 -->
