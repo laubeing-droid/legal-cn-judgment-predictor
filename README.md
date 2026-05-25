@@ -60,6 +60,10 @@ CLI 模式：
 模型按工作流自动执行全流程。
 ```
 
+## 引用来源
+
+详见 [REFERENCES.md](REFERENCES.md)
+
 ## 许可证
 
 MIT
