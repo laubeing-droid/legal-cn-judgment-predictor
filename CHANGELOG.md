@@ -1,4 +1,9 @@
-﻿# Changelog
+﻿
+## v1.1.0 (2026-05-25)
+
+- install.ps1 依赖链: 自动安装 core-codices + mcp-hub
+- 五仓 README 统一重写 + 生态引用对齐
+# Changelog
 
 ## [v1.0.0] - 2026-05-25
 
@@ -20,3 +25,4 @@
 - docs/QUICKSTART.md：快速开始指南
 - REFERENCES.md：引用来源与联动说明
 - LICENSE：MIT
+
