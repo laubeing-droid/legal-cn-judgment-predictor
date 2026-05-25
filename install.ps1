@@ -2,7 +2,7 @@
 .SYNOPSIS
   一键安装 Codex-Legal-CN-Judgment-Predictor
 .DESCRIPTION
-  自动安装必需依赖（core-codices 法律数据库），部署技能到 ~/.codex/skills/。
+  自动安装必需依赖（core-codices + mcp-hub），部署技能到 ~/.codex/skills/。
 #>
 #Requires -Version 5.1
 
@@ -15,27 +15,38 @@ Write-Host "=== Codex-Legal-CN-Judgment-Predictor 安装 ===" -ForegroundColor G
 Write-Host ""
 
 # =========================================================
-# [0] 必需依赖
+# [0] 必需依赖 — 自动安装
 # =========================================================
 Write-Host "[0] 安装必需依赖..." -ForegroundColor Yellow
 
-$CodicesDir = Join-Path $ParentDir "codex-claude-legal-cn-core-codices"
-if (Test-Path $CodicesDir) {
-    Write-Host "  [OK] core-codices (法律数据库) 已存在: $CodicesDir" -ForegroundColor Green
-} else {
-    Write-Host "  [安装] core-codices (162部法律全文JSON) -> $CodicesDir" -ForegroundColor Yellow
+function Install-Required {
+    param($Name, $RepoUrl, $DirName)
+    $targetPath = Join-Path $ParentDir $DirName
+    if (Test-Path $targetPath) {
+        Write-Host "  [OK] $Name 已存在: $targetPath" -ForegroundColor Green
+        return
+    }
+    Write-Host "  [安装] $Name -> $targetPath" -ForegroundColor Yellow
     Push-Location $ParentDir
-    git clone --depth 1 https://github.com/laubeing-droid/codex-claude-legal-cn-core-codices.git codex-claude-legal-cn-core-codices 2>&1 | Out-Null
+    git clone --depth 1 $RepoUrl $DirName 2>&1 | Out-Null
     Pop-Location
-    Write-Host "  [OK] core-codices 安装完成" -ForegroundColor Green
+    Write-Host "  [OK] $Name 安装完成" -ForegroundColor Green
 }
+
+Install-Required -Name "core-codices (162部法律全文JSON)" `
+    -RepoUrl "https://github.com/laubeing-droid/codex-claude-legal-cn-core-codices.git" `
+    -DirName "codex-claude-legal-cn-core-codices"
+
+Install-Required -Name "codex-claude-legal-cn-mcp-hub (MCP连接器)" `
+    -RepoUrl "https://github.com/laubeing-droid/codex-claude-legal-cn-mcp-hub.git" `
+    -DirName "codex-claude-legal-cn-mcp-hub"
 
 Write-Host ""
 
 # =========================================================
-# [1/2] 安装技能
+# [1] 安装技能
 # =========================================================
-Write-Host "[1/2] 安装技能..." -ForegroundColor Yellow
+Write-Host "[1] 安装技能..." -ForegroundColor Yellow
 
 $skillName = "judgment-predictor"
 $tgt = "$SkillsDir\$skillName"
@@ -49,13 +60,6 @@ if (Test-Path "$RepoRoot\SKILL.md") {
     exit 1
 }
 
-# =========================================================
-# [2/2] 配置 skill 引用 core-codices 路径
-# =========================================================
-Write-Host "[2/2] 配置..." -ForegroundColor Yellow
-Write-Host "  core-codices 路径: $CodicesDir" -ForegroundColor Cyan
-Write-Host "  裁判预测将从此路径加载法条数据" -ForegroundColor Cyan
-
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Green
 Write-Host "  安装完成！" -ForegroundColor Green
@@ -65,4 +69,5 @@ Write-Host "    @judgment-predictor [案件事实描述]" -ForegroundColor White
 Write-Host ""
 Write-Host "  已安装依赖:" -ForegroundColor Cyan
 Write-Host "    [必需] codex-claude-legal-cn-core-codices — 162部法律全文JSON" -ForegroundColor White
+Write-Host "    [必需] codex-claude-legal-cn-mcp-hub    — MCP连接器(类案检索/法条核验)" -ForegroundColor White
 Write-Host "========================================" -ForegroundColor Green
