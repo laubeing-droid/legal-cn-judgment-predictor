@@ -88,12 +88,12 @@ SKILL.md 工作流第 1 步即加载 laubeing-droid/Claude-for-Legal-CN-to-Codex
 
 ```powershell
 # 1. 安装知识库
-git clone https://github.com/laubeing-droid/laubeing-droid/Claude-for-Legal-CN-to-Codex-to-Codex.git
-cd laubeing-droid/Claude-for-Legal-CN-to-Codex-to-Codex
+git clone https://github.com/laubeing-droid/Claude-for-Legal-CN-to-Codex.git
+cd laubeing-droid/Claude-for-Legal-CN-to-Codex
 .\install.ps1
 
 # 2. 安装 MCP Hub
-git clone https://github.com/laubeing-droid/laubeing-droid/Codex-Claude-legal-cn-mcp-hub.git
+git clone https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub.git
 cd laubeing-droid/Codex-Claude-legal-cn-mcp-hub
 .\install.ps1
 
