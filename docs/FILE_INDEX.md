@@ -1,10 +1,10 @@
-﻿<!--
+<!--
 version: 1.0.1
 module: docs
 status: active
 -->
 
-# Codex-Legal-CN-Judgment-Predictor — 全局文件索引
+# legal-cn-judgment-predictor — 全局文件索引
 
 > JDP
 > 自动生成于 2026-05-25

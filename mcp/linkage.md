@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 version: 1.0.1
 module: judgment-predictor
 status: active
@@ -9,9 +9,9 @@ status: active
 ## 总体架构
 
 ```
-Codex-Legal-CN-Judgment-Predictor (本仓库)
+legal-cn-judgment-predictor (本仓库)
     │
-    ├── 知识注入：读取 laubeing-droid/Claude-for-Legal-CN-to-Codex 本地安装的技能文件
+    ├── 知识注入：读取 laubeing-droid/legal-cn-main 本地安装的技能文件
     │   ├── ~/.codex/skills/references/law-semantic-tree.json
     │   ├── ~/.codex/skills/references/law-versions.json
     │   └── patches/guards/blocking-list.md
@@ -26,7 +26,7 @@ Codex-Legal-CN-Judgment-Predictor (本仓库)
 
 ### 一、知识注入（自动）
 
-SKILL.md 工作流第 1 步即加载 laubeing-droid/Claude-for-Legal-CN-to-Codex 知识库：
+SKILL.md 工作流第 1 步即加载 laubeing-droid/legal-cn-main 知识库：
 
 ```
 1. 读取 ~/.codex/skills/references/law-semantic-tree.json
@@ -39,7 +39,7 @@ SKILL.md 工作流第 1 步即加载 laubeing-droid/Claude-for-Legal-CN-to-Codex
    → 加载对应领域的中国法推理模板（禁止 IRAC）
 ```
 
-前提：laubeing-droid/Claude-for-Legal-CN-to-Codex 已通过 `install.ps1` 部署到 Codex。
+前提：laubeing-droid/legal-cn-main 已通过 `install.ps1` 部署到 Codex。
 
 ### 二、MCP 工具调用（按阶段触发）
 
@@ -86,24 +86,24 @@ SKILL.md 工作流第 1 步即加载 laubeing-droid/Claude-for-Legal-CN-to-Codex
 
 | 条件 | 策略 |
 |:-----|:-----|
-| MCP Hub 未安装 | 基于 laubeing-droid/Claude-for-Legal-CN-to-Codex 知识库法条文本工作，标注 `[无MCP-需核验]` |
-| laubeing-droid/Claude-for-Legal-CN-to-Codex 未安装 | 降级为通用法律推理，标注 `[无知识库-法条可能不准确]` |
+| MCP Hub 未安装 | 基于 laubeing-droid/legal-cn-main 知识库法条文本工作，标注 `[无MCP-需核验]` |
+| laubeing-droid/legal-cn-main 未安装 | 降级为通用法律推理，标注 `[无知识库-法条可能不准确]` |
 | 两者均未安装 | 框架仍可运行（纯 LLM 推理），但置信度自动降低一级 |
 
 ## 前置安装
 
 ```powershell
 # 1. 安装知识库
-git clone https://github.com/laubeing-droid/Claude-for-Legal-CN-to-Codex.git
-cd laubeing-droid/Claude-for-Legal-CN-to-Codex
+git clone https://github.com/laubeing-droid/legal-cn-main.git
+cd laubeing-droid/legal-cn-main
 .\install.ps1
 
 # 2. 安装 MCP Hub
-git clone https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub.git
-cd laubeing-droid/Codex-Claude-legal-cn-mcp-hub
+git clone https://github.com/laubeing-droid/legal-cn-mcp-hub.git
+cd laubeing-droid/legal-cn-mcp-hub
 .\install.ps1
 
 # 3. 安装本框架
-git clone https://github.com/laubeing-droid/Codex-Legal-CN-Judgment-Predictor.git
+git clone https://github.com/laubeing-droid/legal-cn-judgment-predictor.git
 # 将 SKILL.md 导入 Codex 技能目录即可使用
 ```

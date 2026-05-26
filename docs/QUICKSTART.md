@@ -1,17 +1,17 @@
-﻿<!--
+<!--
 version: 1.0.1
 module: docs
 status: active
 -->
 
-# 快速入门 — Codex-Legal-CN-Judgment-Predictor
+# 快速入门 — legal-cn-judgment-predictor
 
 ## 安装
 
 本仓库为纯 Prompt 技能，无需编译安装。在 Codex Desktop 中加载即可使用。
 
 ```bash
-git clone https://github.com/laubeing-droid/Codex-Legal-CN-Judgment-Predictor.git
+git clone https://github.com/laubeing-droid/legal-cn-judgment-predictor.git
 ```
 
 将 `SKILL.md` 所在目录导入 Codex Desktop 技能库。
@@ -37,5 +37,5 @@ git clone https://github.com/laubeing-droid/Codex-Legal-CN-Judgment-Predictor.gi
 
 ## 联动
 
-- 法条核验：通过 [MCP Hub](https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub) 调用北大法宝/元典智库
+- 法条核验：通过 [MCP Hub](https://github.com/laubeing-droid/legal-cn-mcp-hub) 调用北大法宝/元典智库
 - 概念对齐：通过 [ALN Framework](https://github.com/laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework) 过滤美国法概念

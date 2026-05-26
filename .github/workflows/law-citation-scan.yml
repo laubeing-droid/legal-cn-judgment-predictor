@@ -1,4 +1,4 @@
-﻿name: "月度法条过期扫描与自动更新"
+name: "月度法条过期扫描与自动更新"
 
 on:
   schedule:
@@ -31,7 +31,7 @@ jobs:
       - name: 扫描法条引用
         shell: pwsh
         run: |
-          Write-Host "=== Codex-Legal-CN-Judgment-Predictor 法条扫描 ===" -ForegroundColor Cyan
+          Write-Host "=== legal-cn-judgment-predictor 法条扫描 ===" -ForegroundColor Cyan
           
           # 扫描所有MD文件中的法条引用
           $files = Get-ChildItem -Recurse -File | Where-Object { $_.Extension -eq '.md' -and $_.Directory.Name -ne '.git' }
@@ -61,4 +61,4 @@ jobs:
       - name: 摘要
         if: always()
         run: |
-          echo "## Codex-Legal-CN-Judgment-Predictor 法条扫描完成" >> $GITHUB_STEP_SUMMARY
+          echo "## legal-cn-judgment-predictor 法条扫描完成" >> $GITHUB_STEP_SUMMARY

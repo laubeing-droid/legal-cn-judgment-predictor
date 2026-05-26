@@ -16,8 +16,8 @@ status: active
 ## 概述
 
 中国法 AI 裁判预测框架，纯 Prompt 驱动，零模型训练。
-深度联动 [laubeing-droid/Claude-for-Legal-CN-to-Codex](https://github.com/laubeing-droid/Claude-for-Legal-CN-to-Codex) 知识库
-和 [laubeing-droid/Codex-Claude-legal-cn-mcp-hub](https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub) MCP 工具。
+深度联动 [laubeing-droid/legal-cn-main](https://github.com/laubeing-droid/legal-cn-main) 知识库
+和 [laubeing-droid/legal-cn-mcp-hub](https://github.com/laubeing-droid/legal-cn-mcp-hub) MCP 工具。
 
 ## 工作流
 

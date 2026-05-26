@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 version: 1.0.1
 module: judgment-predictor
 status: active
@@ -22,8 +22,8 @@ status: active
 
 | 项目 | 用途 |
 |:-----|:-----|
-| [laubeing-droid/Claude-for-Legal-CN-to-Codex](https://github.com/laubeing-droid/Claude-for-Legal-CN-to-Codex) | 法律知识注入：law-semantic-tree.json + blocking-list.md + reasoning-template-zh.md |
-| [laubeing-droid/Codex-Claude-legal-cn-mcp-hub](https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub) | MCP 工具联动：案例库检索 + 国家法规库核验 + 元典智库综合检索 |
+| [laubeing-droid/legal-cn-main](https://github.com/laubeing-droid/legal-cn-main) | 法律知识注入：law-semantic-tree.json + blocking-list.md + reasoning-template-zh.md |
+| [laubeing-droid/legal-cn-mcp-hub](https://github.com/laubeing-droid/legal-cn-mcp-hub) | MCP 工具联动：案例库检索 + 国家法规库核验 + 元典智库综合检索 |
 | [laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework](https://github.com/laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework) | 中美法律概念映射框架（29 项阻断清单上游） |
 
 ## 免责声明

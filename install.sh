@@ -1,29 +1,29 @@
 #!/bin/bash
-# Codex-Legal-CN-Judgment-Predictor install script
+# legal-cn-judgment-predictor install script
 set -e
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PARENT_DIR="$(dirname "$SCRIPT_DIR")"
 SKILLS_DIR="$HOME/.codex/skills"
 
-echo "=== Codex-Legal-CN-Judgment-Predictor v1.1.0 ==="
+echo "=== legal-cn-judgment-predictor v1.1.0 ==="
 echo ""
 
 # Required: core-codices
-CODICES_DIR="$PARENT_DIR/codex-claude-legal-cn-core-codices"
+CODICES_DIR="$PARENT_DIR/legal-cn-core-codices"
 if [ -d "$CODICES_DIR" ]; then
     echo "[OK] core-codices exists: $CODICES_DIR"
 else
     echo "[INSTALL] core-codices -> $CODICES_DIR"
-    git clone --depth 1 https://github.com/laubeing-droid/codex-claude-legal-cn-core-codices.git "$CODICES_DIR"
+    git clone --depth 1 https://github.com/laubeing-droid/legal-cn-core-codices.git "$CODICES_DIR"
 fi
 
 # Required: mcp-hub
-MCP_DIR="$PARENT_DIR/codex-claude-legal-cn-mcp-hub"
+MCP_DIR="$PARENT_DIR/legal-cn-mcp-hub"
 if [ -d "$MCP_DIR" ]; then
     echo "[OK] mcp-hub exists: $MCP_DIR"
 else
     echo "[INSTALL] mcp-hub -> $MCP_DIR"
-    git clone --depth 1 https://github.com/laubeing-droid/codex-claude-legal-cn-mcp-hub.git "$MCP_DIR"
+    git clone --depth 1 https://github.com/laubeing-droid/legal-cn-mcp-hub.git "$MCP_DIR"
 fi
 
 # Install skill

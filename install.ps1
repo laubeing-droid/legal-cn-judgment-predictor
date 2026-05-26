@@ -1,6 +1,6 @@
-﻿<#
+<#
 .SYNOPSIS
-  一键安装 Codex-Legal-CN-Judgment-Predictor
+  一键安装 legal-cn-judgment-predictor
 .DESCRIPTION
   自动安装必需依赖（core-codices + mcp-hub），部署技能到 ~/.codex/skills/。
 #>
@@ -11,7 +11,7 @@ $RepoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $SkillsDir = "$env:USERPROFILE\.codex\skills"
 $ParentDir = Split-Path -Parent $RepoRoot
 
-Write-Host "=== Codex-Legal-CN-Judgment-Predictor 安装 ===" -ForegroundColor Green
+Write-Host "=== legal-cn-judgment-predictor 安装 ===" -ForegroundColor Green
 Write-Host ""
 
 # =========================================================
@@ -34,12 +34,12 @@ function Install-Required {
 }
 
 Install-Required -Name "core-codices (162部法律全文JSON)" `
-    -RepoUrl "https://github.com/laubeing-droid/codex-claude-legal-cn-core-codices.git" `
-    -DirName "codex-claude-legal-cn-core-codices"
+    -RepoUrl "https://github.com/laubeing-droid/legal-cn-core-codices.git" `
+    -DirName "legal-cn-core-codices"
 
-Install-Required -Name "codex-claude-legal-cn-mcp-hub (MCP连接器)" `
-    -RepoUrl "https://github.com/laubeing-droid/codex-claude-legal-cn-mcp-hub.git" `
-    -DirName "codex-claude-legal-cn-mcp-hub"
+Install-Required -Name "legal-cn-mcp-hub (MCP连接器)" `
+    -RepoUrl "https://github.com/laubeing-droid/legal-cn-mcp-hub.git" `
+    -DirName "legal-cn-mcp-hub"
 
 Write-Host ""
 
@@ -68,7 +68,7 @@ Write-Host "  使用方式:" -ForegroundColor Cyan
 Write-Host "    @judgment-predictor [案件事实描述]" -ForegroundColor White
 Write-Host ""
 Write-Host "  已安装依赖:" -ForegroundColor Cyan
-Write-Host "    [必需] codex-claude-legal-cn-core-codices — 162部法律全文JSON" -ForegroundColor White
-Write-Host "    [必需] codex-claude-legal-cn-mcp-hub    — MCP连接器(类案检索/法条核验)" -ForegroundColor White
+Write-Host "    [必需] legal-cn-core-codices — 162部法律全文JSON" -ForegroundColor White
+Write-Host "    [必需] legal-cn-mcp-hub    — MCP连接器(类案检索/法条核验)" -ForegroundColor White
 Write-Host "========================================" -ForegroundColor Green
 
